@@ -22,7 +22,6 @@ indirectly by:
 * Greg Favor <gfavor@ventanamicro.com>
 * John Hauser <jh.riscv@jhauser.us>
 * Anup Patel <anup.patel@wdc.com>
-* Atish Patra <atish.patra@wdc.com>
 * Alistair Francis <alistair.francis@wdc.com>
 
 *NOTE:* Please add yourself to the above list if you have contributed to
@@ -66,15 +65,15 @@ list of devices defined by the RISC-V ACLINT specification.
 |===
 | Name   | Privilege Level | Functionality
 | MTIMER | Machine         | Fixed-frequency counter and timer events
-| MSWI   | Machine         | Inter-processor (or software) interrupts
-| SSWI   | Supervisor      | Inter-processor (or software) interrupts
+| MSWI   | Machine         | Inter-processor (or software) interrupts for M mode
+| SSWI   | Supervisor      | Inter-processor (or software) interrupts for S mode
 |===
 
 === Backward Compatibility With SiFive CLINT
 
 The RISC-V ACLINT specification is defined to be backward compatible with the
 SiFive CLINT specification. The register definitions and register offsets of
-the MTIMER and MSWI devices are compatible with the IPI and timer registers
+the MTIMER and MSWI devices are compatible with the timer and IPI registers
 defined by the SiFive CLINT specification. A SiFive CLINT device on a RISC-V
 platform can be logically seen as one MSWI device and one MTIMER devices
 placed next to each other in the memory address space as shown in
